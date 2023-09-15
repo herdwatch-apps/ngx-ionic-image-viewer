@@ -41,7 +41,7 @@
 ## Installation
 
 ```bash
-npm install --save ngx-ionic-image-viewer
+npm install --save npm i @t.simon/ionic-image-viewer
 ```
 
 ## Usage
