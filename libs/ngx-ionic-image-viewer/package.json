@@ -1,6 +1,6 @@
 {
   "name": "@t.simon/ionic-image-viewer",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "The angular workspace to develop the ngx-ionic-image-viewer component",
   "keywords": [
     "ionic",

@@ -6,7 +6,7 @@
 
 ## Demo <!-- omit in toc -->
 
-![ngx-ionic-image-viewer-showcase](https://github.com/SimonGolms/ngx-ionic-image-viewer/raw/master/docs/showcase.gif)
+![ngx-ionic-image-viewer-showcase](https://github.com/dev-kalleno/ngx-ionic-image-viewer/raw/master/docs/showcase.gif)
 
 ## Overview <!-- omit in toc -->
 
