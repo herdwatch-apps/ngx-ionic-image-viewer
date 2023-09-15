@@ -12,10 +12,12 @@ ion-toolbar {
 ion-header {
   opacity: 1;
   position: absolute;
+
   &.no-title {
     &:after {
       content: none;
     }
+
     ion-toolbar {
       --background: rgba(0, 0, 0, 0);
       background: rgba(0, 0, 0, 0);
@@ -26,13 +28,24 @@ ion-header {
 ion-footer {
   position: absolute;
   bottom: 0;
+
   &.no-text {
     &:before {
       content: none;
     }
+
     ion-toolbar {
       --background: rgba(0, 0, 0, 0);
       background: rgba(0, 0, 0, 0);
     }
   }
+}
+
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  overflow: hidden;
 }

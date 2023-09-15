@@ -3,7 +3,9 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ViewerModalComponent } from './viewer-modal/viewer-modal.component';
+import { register } from 'swiper/element/bundle';
 
+register();
 @Component({
   selector: 'ion-img-viewer',
   templateUrl: './ngx-ionic-image-viewer.component.html',

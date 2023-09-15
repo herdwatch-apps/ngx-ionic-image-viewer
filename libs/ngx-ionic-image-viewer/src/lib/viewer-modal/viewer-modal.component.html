@@ -10,13 +10,13 @@
 </ion-header>
 
 <ion-content [forceOverscroll]="false">
-  <ion-slides [options]="options" #sliderRef>
-    <!-- <ion-slide>
+  <swiper-container [options]="options" centeredSlides="true" passiveListeners="false" zoom="true" #swiper>
+    <swiper-slide>
       <div class="swiper-zoom-container">
-        <img [alt]="this.alt" [src]="this.src" (error)="onError($event)" />
+        <img [alt]="this.alt" [src]="this.src"/>
       </div>
-    </ion-slide> -->
-  </ion-slides>
+    </swiper-slide>
+  </swiper-container>
 </ion-content>
 
 <ion-footer [ngClass]="{ 'no-text': text && text.length <= 0 }">

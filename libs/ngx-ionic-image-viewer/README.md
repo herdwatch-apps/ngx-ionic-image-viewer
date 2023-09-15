@@ -2,7 +2,7 @@
 
 # ngx-ionic-image-viewer <!-- omit in toc -->
 
-> An Ionic Angular module to view & zoom on images and photos without any additional dependencies.
+> An Ionic Angular module to view & zoom on images and photos works with swiperjs, so it works with Ionic7.
 
 ## Demo <!-- omit in toc -->
 
@@ -51,7 +51,7 @@ npm install --save ngx-ionic-image-viewer
 Import the module and add it to your imports section in your main AppModule:
 
 ```js
-import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
+import {NgxIonicImageViewerModule} from 'ngx-ionic-image-viewer';
 
 ...
 
@@ -60,13 +60,14 @@ import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
     NgxIonicImageViewerModule
   ],
 })
-export class AppModule {}
+export class AppModule {
+}
 ```
 
 Import the module and add it to your imports section of your component where you want to use it (e.g. `home.module.ts`):
 
 ```js
-import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
+import {NgxIonicImageViewerModule} from 'ngx-ionic-image-viewer';
 
 ...
 
@@ -75,7 +76,8 @@ import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
     NgxIonicImageViewerModule
   ],
 })
-export class HomePageModule {}
+export class HomePageModule {
+}
 
 ```
 
@@ -84,6 +86,7 @@ export class HomePageModule {}
 Add `ion-img-viewer` within the HTML of your module (e.g. `home.page.html`)
 
 ```html
+
 <ion-img-viewer
   title="Demo"
   text="Component"
@@ -98,6 +101,7 @@ Add `ion-img-viewer` within the HTML of your module (e.g. `home.page.html`)
 Add `ionImgViewer` as a directive within the `ion-img` HTML element of your module (e.g. `home.page.html`)
 
 ```html
+
 <ion-img
   ionImgViewer
   title="Demo"
@@ -114,30 +118,37 @@ Import `ViewerModalComponent` from `ngx-ionic-image-viewer` and add it to the `M
 Use `cssClass: ['ion-img-viewer', 'my-custom-ion-img-viewer']`in case you want to add more css classes.
 
 ```js
-import { ModalController } from '@ionic/angular';
-import { ViewerModalComponent } from 'ngx-ionic-image-viewer';
+import {ModalController} from '@ionic/angular';
+import {ViewerModalComponent} from 'ngx-ionic-image-viewer';
 
 export class HomePage {
 
-  constructor(public modalController: ModalController) {}
+  constructor(public
 
-  async openViewer() {
-    const modal = await this.modalController.create({
-      component: ViewerModalComponent,
-      componentProps: {
-        src: "./assets/img/demo.jpg"
-      },
-      cssClass: 'ion-img-viewer',
-      keyboardClose: true,
-      showBackdrop: true
-    });
+  modalController: ModalController
+) {
+}
 
-    return await modal.present();
-  }
+async
+openViewer()
+{
+  const modal = await this.modalController.create({
+    component: ViewerModalComponent,
+    componentProps: {
+      src: "./assets/img/demo.jpg"
+    },
+    cssClass: 'ion-img-viewer',
+    keyboardClose: true,
+    showBackdrop: true
+  });
+
+  return await modal.present();
+}
 }
 ```
 
 ```html
+
 <ion-button (click)="openViewer()">Open Viewer</ion-button>
 ```
 
@@ -396,9 +407,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    npm run ionic:serve
    ```
 
-   - [`npm link`](https://docs.npmjs.com/cli/link): Create a local symlink that can then be used in the project where you want to integrate the package as you don’t want to build, publish and update a library all the time while testing.
-   - Run the command `npm link ngx-ionic-image-viewer` inside the libs folder to link the global installation target into your project’s `node_modules` folder.
-   - [`ionic serve`](https://ionicframework.com/docs/cli/commands/serve): Start a local dev server for app dev/testing. Navigate to `http://localhost:8100/`. The app will automatically reload if you change any of the source files.
+- [`npm link`](https://docs.npmjs.com/cli/link): Create a local symlink that can then be used in the project where you want to integrate the package as you don’t want to build, publish and update a library all the time while testing.
+- Run the command `npm link ngx-ionic-image-viewer` inside the libs folder to link the global installation target into your project’s `node_modules` folder.
+- [`ionic serve`](https://ionicframework.com/docs/cli/commands/serve): Start a local dev server for app dev/testing. Navigate to `http://localhost:8100/`. The app will automatically reload if you change any of the source files.
 
 ### Code scaffolding
 
@@ -441,7 +452,7 @@ Further information: [How to automate versioning and publication of an npm packa
 
 ## Author
 
-**Simon Golms**
+**Simon Golms**
 
 - Digital Card: `npx simongolms`
 - Github: [@simongolms](https://github.com/simongolms)

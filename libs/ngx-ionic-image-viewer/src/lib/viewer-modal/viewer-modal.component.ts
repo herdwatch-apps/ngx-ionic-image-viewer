@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { ModalController, IonSlides } from '@ionic/angular';
+import {Component, OnInit, Input, ViewChild, ElementRef} from '@angular/core';
+import {ModalController} from '@ionic/angular';
 
 @Component({
   selector: 'ion-viewer-modal',
@@ -21,8 +21,6 @@ export class ViewerModalComponent implements OnInit {
   // tslint:enable: no-inferrable-types
 
   defaultSlideOptions = {
-    centeredSlides: true,
-    passiveListeners: false,
     zoom: {
       enabled: true,
     },
@@ -46,12 +44,16 @@ export class ViewerModalComponent implements OnInit {
     startTime: 0,
   };
 
-  @ViewChild('sliderRef', { static: true }) slides!: IonSlides;
 
-  constructor(private modalController: ModalController) { }
+  @ViewChild('swiper') swiperRef: ElementRef | undefined;
+
+  // @ViewChild('sliderRef', { static: true }) slides!: IonSlides;
+
+  constructor(private modalController: ModalController) {
+  }
 
   async ngOnInit() {
-    this.options = { ...this.defaultSlideOptions, ...this.slideOptions };
+    this.options = {...this.defaultSlideOptions, ...this.slideOptions};
     this.src = this.srcHighRes || this.src;
     this.setStyle();
     this.setScheme(this.scheme);
@@ -62,8 +64,6 @@ export class ViewerModalComponent implements OnInit {
      * See reported bug: https://github.com/ionic-team/ionic/issues/19638#issuecomment-584828315
      * Hint: Comment in '<ion-slide>' in component
      */
-    const swiper = await this.slides.getSwiper();
-    swiper.appendSlide(`<ion-slide><img alt="${this.alt}" src="${this.src}" onerror="this.src='${this.srcFallback}'"/></ion-slide>`);
   }
 
   setStyle() {
@@ -129,7 +129,10 @@ export class ViewerModalComponent implements OnInit {
   }
 
   swipeStart(event: any) {
-    const { pageX, pageY } = event.type === 'touchstart' ? event.changedTouches[0] : event;
+    const {
+      pageX,
+      pageY
+    } = event.type === 'touchstart' && event.changedTouches ? event?.changedTouches[0] : event;
 
     this.swipeState = {
       ...this.swipeState,
@@ -143,10 +146,10 @@ export class ViewerModalComponent implements OnInit {
   }
 
   swipeMove(event: any) {
-    if (this.swipeState.phase === 'none') {
-      return;
-    }
-    const { pageX, pageY } = event.type === 'touchmove' ? event.changedTouches[0] : event;
+    const {
+      pageX,
+      pageY
+    } = event.type === 'touchmove' && event.changedTouches ? event?.changedTouches[0] : event;
     // get horizontal dist traveled by finger while in contact with surface
     const distanceX = pageX - this.swipeState.startX;
     // get vertical dist traveled by finger while in contact with surface
@@ -171,14 +174,16 @@ export class ViewerModalComponent implements OnInit {
       distanceX,
       distanceY,
     };
-    event.preventDefault();
+    if (event.cancelable) {
+      event.preventDefault();
+    }
   }
 
   swipeEnd(event: any) {
     if (this.swipeState.phase === 'none') {
       return;
     }
-    const { allowedTime, direction, restraint, startTime, threshold, distanceX, distanceY } = this.swipeState;
+    const {allowedTime, direction, restraint, startTime, threshold, distanceX, distanceY} = this.swipeState;
     let swipeType;
 
     const elapsedTime = new Date().getTime() - startTime; // get time elapsed

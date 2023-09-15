@@ -24,22 +24,23 @@
     "modal",
     "slider"
   ],
-  "homepage": "https://github.com/iKrishnaSahu/ngx-ionic-image-viewer.git",
+  "homepage": "https://github.com/dev-kalleno/ngx-ionic-image-viewer.git",
   "license": "MIT",
   "author": {
-    "name": "Simon Golms",
-    "email": "development@gol.ms",
-    "url": "https://gol.ms"
+    "name": "Thomas Simon",
+    "email": "t.simon@live.com"
   },
   "scripts": {
     "ng": "ng",
     "start": "nx serve --project demo",
-    "ionic:serve": "cd demo && ionic serve",
+    "ionic:serve": "cd apps/demo && ionic serve",
     "prebuild": "cp README.md libs/ngx-ionic-image-viewer/ ",
     "build": "nx build --project ngx-ionic-image-viewer --configuration production",
     "build:watch": "nx build --watch",
-    "demo:update": "cd demo && npm install ngx-ionic-image-viewer@latest --save && git commit -m \"chore(demo): update dependency\n\n- ngx-ionic-image-viewer@latest\" package*.json",
-    "release": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it --ci\"",
+    "demo:update": "cd apps/demo && npm install @t.simon/ionic-image-viewer --save --force && git commit -m \"chore(demo): update dependency\n\n- @t.simon/ionic-image-viewer\" package*.json",
+    "release-silent": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it --ci\"",
+    "release": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it\"",
+    "release-major": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it major\"",
     "release:dry-run": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it --ci --dry-run\"",
     "test": "nx test",
     "lint": "nx lint",
@@ -50,7 +51,7 @@
     "url": "https://github.com/iKrishnaSahu/ngx-ionic-image-viewer.git"
   },
   "private": true,
-  "dependencies": {
+  "peerDependencies": {
     "@angular/animations": "^15.2.0",
     "@angular/common": "^15.2.0",
     "@angular/compiler": "^15.2.0",
@@ -61,6 +62,7 @@
     "@angular/router": "^15.2.0",
     "@ionic/angular": "^6.0.16",
     "rxjs": "~7.8.1",
+    "swiper": "10.2.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -126,5 +128,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "@t.simon/ionic-image-viewer": "^2.0.8"
   }
 }
