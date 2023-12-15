@@ -450,7 +450,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Run `npx git-cz` to generate a valid commit message. It’s easy to forget about the commit convention so to be consistent use [commitizen](https://github.com/commitizen/cz-cli) to generate our commits and husky to manage a Git commit-msg hook to validate the commit message.
 Further information: [How to automate versioning and publication of an npm package](https://itnext.io/how-to-automate-versioning-and-publication-of-an-npm-package-233e8757a526)
 
-## Author
+## Authors
 
 **Thomas Simon**
 
@@ -462,7 +462,7 @@ Further information: [How to automate versioning and publication of an npm packa
 
 ## Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](hhttps://github.com/herdwatch-apps/ngx-ionic-image-viewer/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/herdwatch-apps/ngx-ionic-image-viewer/issues).
 
 ## Show your support
 

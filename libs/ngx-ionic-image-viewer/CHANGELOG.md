@@ -1,3 +1,12 @@
+* update package name (be28655)
+* fix demo (b9e1276)
+* - updated version - fixed README.md (8c8ed07)
+* updated version (93a6314)
+* changed README.md (83c82f6)
+* Merge remote-tracking branch 'origin/master' (dcfa66b)
+* Switched from ion-slide to swiperjs implementation. (4f34a8e)
+* update package.json (fca50ca)
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/iKrishnaSahu/ngx-ionic-image-viewer/compare/v1.1.9...v2.0.0) (2023-05-01)
 
