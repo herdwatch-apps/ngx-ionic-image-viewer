@@ -24,12 +24,19 @@
     "modal",
     "slider"
   ],
-  "homepage": "https://github.com/dev-kalleno/ngx-ionic-image-viewer.git",
+  "homepage": "https://github.com/herdwatch-apps/ngx-ionic-image-viewer.git",
   "license": "MIT",
   "author": {
     "name": "Thomas Simon",
     "email": "t.simon@live.com"
   },
+  "contributors": [
+    {
+      "name": "Maxim Belov",
+      "email": "belov1988@gmail.com",
+      "url": "https://github.com/MaximBelov"
+    }
+  ],
   "scripts": {
     "ng": "ng",
     "start": "nx serve --project demo",
@@ -37,7 +44,7 @@
     "prebuild": "cp README.md libs/ngx-ionic-image-viewer/ ",
     "build": "nx build --project ngx-ionic-image-viewer --configuration production",
     "build:watch": "nx build --project ngx-ionic-image-viewer --configuration production --watch",
-    "demo:update": "cd apps/demo && npm install @t.simon/ionic-image-viewer --save --force && git commit -m \"chore(demo): update dependency\n\n- @t.simon/ionic-image-viewer\" package*.json",
+    "demo:update": "cd apps/demo && npm install @herdwatch-apps/ngx-ionic-image-viewer --save --force && git commit -m \"chore(demo): update dependency\n\n- @herdwatch-apps/ngx-ionic-image-viewer\" package*.json",
     "release-silent": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it --ci\"",
     "release": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it\"",
     "release-major": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it major\"",
@@ -48,7 +55,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iKrishnaSahu/ngx-ionic-image-viewer.git"
+    "url": "https://github.com/herdwatch-apps/ngx-ionic-image-viewer.git"
   },
   "private": true,
   "peerDependencies": {
@@ -125,6 +132,6 @@
     }
   },
   "dependencies": {
-    "@t.simon/ionic-image-viewer": "^2.1.8"
+    "@herdwatch-apps/ngx-ionic-image-viewer": "^2.1.8"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "name": "@t.simon/ionic-image-viewer",
-  "version": "2.1.4",
+  "name": "@herdwatch-apps/ngx-ionic-image-viewer",
+  "version": "2.1.6",
   "description": "The angular workspace to develop the ngx-ionic-image-viewer component",
   "keywords": [
     "ionic",
@@ -24,12 +24,19 @@
     "modal",
     "slider"
   ],
-  "homepage": "https://github.com/dev-kalleno/ngx-ionic-image-viewer.git",
+  "homepage": "https://github.com/herdwatch-apps/ngx-ionic-image-viewer.git",
   "license": "MIT",
   "author": {
     "name": "Thomas Simon",
     "email": "t.simon@live.com"
   },
+  "contributors": [
+    {
+      "name": "Maxim Belov",
+      "email": "belov1988@gmail.com",
+      "url": "https://github.com/MaximBelov"
+    }
+  ],
   "scripts": {
     "ng": "ng",
     "start": "nx serve --project demo",
@@ -37,7 +44,7 @@
     "prebuild": "cp README.md libs/ngx-ionic-image-viewer/ ",
     "build": "nx build --project ngx-ionic-image-viewer --configuration production",
     "build:watch": "nx build --watch",
-    "demo:update": "cd apps/demo && npm install @t.simon/ionic-image-viewer --save --force && git commit -m \"chore(demo): update dependency\n\n- @t.simon/ionic-image-viewer\" package*.json",
+    "demo:update": "cd apps/demo && npm install @herdwatch-apps/ngx-ionic-image-viewer --save --force && git commit -m \"chore(demo): update dependency\n\n- @herdwatch-apps/ngx-ionic-image-viewer\" package*.json",
     "release-silent": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it --ci\"",
     "release": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it\"",
     "release-major": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it major\"",
@@ -48,21 +55,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dev-kalleno/ngx-ionic-image-viewer.git"
+    "url": "https://github.com/herdwatch-apps/ngx-ionic-image-viewer.git"
   },
   "peerDependencies": {
-    "@angular/animations": "^15.2.0",
-    "@angular/common": "^15.2.0",
-    "@angular/compiler": "^15.2.0",
-    "@angular/core": "^15.2.0",
-    "@angular/forms": "^15.2.0",
-    "@angular/platform-browser": "^15.2.0",
-    "@angular/platform-browser-dynamic": "^15.2.0",
-    "@angular/router": "^15.2.0",
-    "@ionic/angular": "^6.0.16",
-    "rxjs": "~7.8.1",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "@angular/animations": ">=15.2.0",
+    "@angular/common": ">=15.2.0",
+    "@angular/compiler": ">=15.2.0",
+    "@angular/core": ">=15.2.0",
+    "@angular/forms": ">=15.2.0",
+    "@angular/platform-browser": ">=15.2.0",
+    "@angular/platform-browser-dynamic": ">=15.2.0",
+    "@angular/router": ">=15.2.0",
+    "@ionic/angular": ">=6.0.16",
+    "rxjs": ">=7.8.0",
+    "tslib": ">=2.3.0",
+    "zone.js": ">=0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.0",

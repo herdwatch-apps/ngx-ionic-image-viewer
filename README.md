@@ -6,7 +6,7 @@
 
 ## Demo <!-- omit in toc -->
 
-![ngx-ionic-image-viewer-showcase](https://github.com/dev-kalleno/ngx-ionic-image-viewer/raw/master/docs/showcase.gif)
+![ngx-ionic-image-viewer-showcase](https://github.com/herdwatch-apps/ngx-ionic-image-viewer/raw/master/docs/showcase.gif)
 
 ## Overview <!-- omit in toc -->
 
@@ -41,7 +41,7 @@
 ## Installation
 
 ```bash
-npm install --save npm i @t.simon/ionic-image-viewer
+npm install --save npm i @herdwatch-apps/ngx-ionic-image-viewer
 ```
 
 ## Usage
@@ -51,7 +51,7 @@ npm install --save npm i @t.simon/ionic-image-viewer
 Import the module and add it to your imports section in your main AppModule:
 
 ```js
-import {NgxIonicImageViewerModule} from '@t.simon/ionic-image-viewer';
+import {NgxIonicImageViewerModule} from '@herdwatch-apps/ngx-ionic-image-viewer';
 
 ...
 
@@ -67,7 +67,7 @@ export class AppModule {
 Import the module and add it to your imports section of your component where you want to use it (e.g. `home.module.ts`):
 
 ```js
-import {NgxIonicImageViewerModule} from '@t.simon/ionic-image-viewer';
+import {NgxIonicImageViewerModule} from '@herdwatch-apps/ngx-ionic-image-viewer';
 
 ...
 
@@ -114,12 +114,12 @@ Add `ionImgViewer` as a directive within the `ion-img` HTML element of your modu
 
 ### Controller
 
-Import `ViewerModalComponent` from `@t.simon/ionic-image-viewer` and add it to the `ModalController`. Within the `componentProps`, all available properties can be passed, whereby `src` is always required. In addition you must add the css class `ion-img-viewer` to the property `cssClass`.
+Import `ViewerModalComponent` from `@herdwatch-apps/ngx-ionic-image-viewer` and add it to the `ModalController`. Within the `componentProps`, all available properties can be passed, whereby `src` is always required. In addition you must add the css class `ion-img-viewer` to the property `cssClass`.
 Use `cssClass: ['ion-img-viewer', 'my-custom-ion-img-viewer']`in case you want to add more css classes.
 
 ```js
 import {ModalController} from '@ionic/angular';
-import {ViewerModalComponent} from '@t.simon/ionic-image-viewer';
+import {ViewerModalComponent} from '@herdwatch-apps/ngx-ionic-image-viewer';
 
 export class HomePage {
 
@@ -408,7 +408,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    ```
 
 - [`npm link`](https://docs.npmjs.com/cli/link): Create a local symlink that can then be used in the project where you want to integrate the package as you don’t want to build, publish and update a library all the time while testing.
-- Run the command `npm link @t.simon/ionic-image-viewer` inside the libs folder to link the global installation target into your project’s `node_modules` folder.
+- Run the command `npm link @herdwatch-apps/ngx-ionic-image-viewer` inside the libs folder to link the global installation target into your project’s `node_modules` folder.
 - [`ionic serve`](https://ionicframework.com/docs/cli/commands/serve): Start a local dev server for app dev/testing. Navigate to `http://localhost:8100/`. The app will automatically reload if you change any of the source files.
 
 ### Code scaffolding
@@ -450,15 +450,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Run `npx git-cz` to generate a valid commit message. It’s easy to forget about the commit convention so to be consistent use [commitizen](https://github.com/commitizen/cz-cli) to generate our commits and husky to manage a Git commit-msg hook to validate the commit message.
 Further information: [How to automate versioning and publication of an npm package](https://itnext.io/how-to-automate-versioning-and-publication-of-an-npm-package-233e8757a526)
 
-## Author
+## Authors
 
 **Thomas Simon**
 
 - Github: [@t.simon](https://github.com/dev-kalleno)
 
+**Maxim Belov**
+
+- Github: [@MaximBelov](https://github.com/MaximBelov)
+
 ## Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](hhttps://github.com/dev-kalleno/ngx-ionic-image-viewer/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/herdwatch-apps/ngx-ionic-image-viewer/issues).
 
 ## Show your support
 
@@ -467,4 +471,5 @@ Give a ⭐️ if this project helped you!
 ## License
 
 Copyright © 2023 [Thomas Simon](https://github.com/dev-kalleno).<br />
+Copyright © 2023 [MaximBelov](https://github.com/MaximBelov).<br />
 This project is [MIT](https://github.com/simongolms/ngx-ionic-image-viewer/blob/master/LICENSE) licensed.
