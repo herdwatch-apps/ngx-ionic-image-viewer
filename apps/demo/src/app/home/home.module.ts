@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
-import { NgxIonicImageViewerModule } from '../../../../../dist/ngx-ionic-image-viewer';
+import { NgxIonicImageViewerModule } from '@t.simon/ionic-image-viewer';
 
 @NgModule({
   imports: [

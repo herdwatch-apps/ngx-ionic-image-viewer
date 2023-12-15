@@ -50,3 +50,4 @@ Thumbs.db
 .env
 
 .angular
+libs/ngx-ionic-image-viewer/node_modules
