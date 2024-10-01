@@ -41,7 +41,7 @@
 ## Installation
 
 ```bash
-npm install --save npm i @herdwatch-apps/ngx-ionic-image-viewer
+npm install --save npm i @herdwatch/ngx-ionic-image-viewer
 ```
 
 ## Usage
@@ -51,7 +51,7 @@ npm install --save npm i @herdwatch-apps/ngx-ionic-image-viewer
 Import the module and add it to your imports section in your main AppModule:
 
 ```js
-import {NgxIonicImageViewerModule} from '@herdwatch-apps/ngx-ionic-image-viewer';
+import {NgxIonicImageViewerModule} from '@herdwatch/ngx-ionic-image-viewer';
 
 ...
 
@@ -67,7 +67,7 @@ export class AppModule {
 Import the module and add it to your imports section of your component where you want to use it (e.g. `home.module.ts`):
 
 ```js
-import {NgxIonicImageViewerModule} from '@herdwatch-apps/ngx-ionic-image-viewer';
+import {NgxIonicImageViewerModule} from '@herdwatch/ngx-ionic-image-viewer';
 
 ...
 
@@ -114,12 +114,12 @@ Add `ionImgViewer` as a directive within the `ion-img` HTML element of your modu
 
 ### Controller
 
-Import `ViewerModalComponent` from `@herdwatch-apps/ngx-ionic-image-viewer` and add it to the `ModalController`. Within the `componentProps`, all available properties can be passed, whereby `src` is always required. In addition you must add the css class `ion-img-viewer` to the property `cssClass`.
+Import `ViewerModalComponent` from `@herdwatch/ngx-ionic-image-viewer` and add it to the `ModalController`. Within the `componentProps`, all available properties can be passed, whereby `src` is always required. In addition you must add the css class `ion-img-viewer` to the property `cssClass`.
 Use `cssClass: ['ion-img-viewer', 'my-custom-ion-img-viewer']`in case you want to add more css classes.
 
 ```js
 import {ModalController} from '@ionic/angular';
-import {ViewerModalComponent} from '@herdwatch-apps/ngx-ionic-image-viewer';
+import {ViewerModalComponent} from '@herdwatch/ngx-ionic-image-viewer';
 
 export class HomePage {
 
@@ -408,7 +408,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    ```
 
 - [`npm link`](https://docs.npmjs.com/cli/link): Create a local symlink that can then be used in the project where you want to integrate the package as you don’t want to build, publish and update a library all the time while testing.
-- Run the command `npm link @herdwatch-apps/ngx-ionic-image-viewer` inside the libs folder to link the global installation target into your project’s `node_modules` folder.
+- Run the command `npm link @herdwatch/ngx-ionic-image-viewer` inside the libs folder to link the global installation target into your project’s `node_modules` folder.
 - [`ionic serve`](https://ionicframework.com/docs/cli/commands/serve): Start a local dev server for app dev/testing. Navigate to `http://localhost:8100/`. The app will automatically reload if you change any of the source files.
 
 ### Code scaffolding

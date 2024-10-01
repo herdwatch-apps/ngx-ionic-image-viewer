@@ -1,6 +1,6 @@
 {
-  "name": "@herdwatch-apps/ngx-ionic-image-viewer",
-  "version": "2.1.7",
+  "name": "@herdwatch/ngx-ionic-image-viewer",
+  "version": "2.1.8",
   "description": "The angular workspace to develop the ngx-ionic-image-viewer component",
   "keywords": [
     "ionic",
@@ -44,7 +44,7 @@
     "prebuild": "cp README.md libs/ngx-ionic-image-viewer/ ",
     "build": "nx build --project ngx-ionic-image-viewer --configuration production",
     "build:watch": "nx build --watch",
-    "demo:update": "cd apps/demo && npm install @herdwatch-apps/ngx-ionic-image-viewer --save --force && git commit -m \"chore(demo): update dependency\n\n- @herdwatch-apps/ngx-ionic-image-viewer\" package*.json",
+    "demo:update": "cd apps/demo && npm install @herdwatch/ngx-ionic-image-viewer --save --force && git commit -m \"chore(demo): update dependency\n\n- @herdwatch/ngx-ionic-image-viewer\" package*.json",
     "release-silent": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it --ci\"",
     "release": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it\"",
     "release-major": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it major\"",

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonToggle, ModalController } from '@ionic/angular';
-import { ViewerModalComponent } from '@herdwatch-apps/ngx-ionic-image-viewer';
+import { ViewerModalComponent } from '@herdwatch/ngx-ionic-image-viewer';
 
 @Component({
   selector: 'app-home',

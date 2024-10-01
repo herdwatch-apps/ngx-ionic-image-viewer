@@ -9,7 +9,7 @@ import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { NgxIonicImageViewerModule } from '@herdwatch-apps/ngx-ionic-image-viewer';
+import { NgxIonicImageViewerModule } from '@herdwatch/ngx-ionic-image-viewer';
 
 @NgModule({
     declarations: [AppComponent],

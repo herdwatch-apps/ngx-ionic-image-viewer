@@ -44,7 +44,7 @@
     "prebuild": "cp README.md libs/ngx-ionic-image-viewer/ ",
     "build": "nx build --project ngx-ionic-image-viewer --configuration production",
     "build:watch": "nx build --project ngx-ionic-image-viewer --configuration production --watch",
-    "demo:update": "cd apps/demo && npm install @herdwatch-apps/ngx-ionic-image-viewer --save --force && git commit -m \"chore(demo): update dependency\n\n- @herdwatch-apps/ngx-ionic-image-viewer\" package*.json",
+    "demo:update": "cd apps/demo && npm install @herdwatch/ngx-ionic-image-viewer --save --force && git commit -m \"chore(demo): update dependency\n\n- @herdwatch/ngx-ionic-image-viewer\" package*.json",
     "release-silent": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it --ci\"",
     "release": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it\"",
     "release-major": "dotenv -- bash -c \"cd libs/ngx-ionic-image-viewer && release-it major\"",
@@ -132,6 +132,6 @@
     }
   },
   "dependencies": {
-    "@herdwatch-apps/ngx-ionic-image-viewer": "^2.1.8"
+    "@herdwatch/ngx-ionic-image-viewer": "^2.1.8"
   }
 }
