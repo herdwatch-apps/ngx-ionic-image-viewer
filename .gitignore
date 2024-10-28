@@ -51,3 +51,4 @@ Thumbs.db
 
 .angular
 libs/ngx-ionic-image-viewer/node_modules
+.nx/cache

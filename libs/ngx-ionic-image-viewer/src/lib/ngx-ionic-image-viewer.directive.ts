@@ -33,7 +33,7 @@ export class NgxIonicImageViewerDirective implements OnInit {
     );
   }
 
-  @HostListener('error', ['$event']) onError(error: any) {
+  @HostListener('error', ['$event']) onError() {
     if (this.src !== this.el.nativeElement.src) {
       this.src = this.el.nativeElement.src;
     }
@@ -50,14 +50,14 @@ export class NgxIonicImageViewerDirective implements OnInit {
 
   async viewImage(
     src: string,
-    srcFallback: string = '',
-    srcHighRes: string = '',
-    title: string = '',
-    titleSize: string = '',
-    text: string = '',
-    scheme: string = 'auto',
+    srcFallback = '',
+    srcHighRes = '',
+    title = '',
+    titleSize = '',
+    text = '',
+    scheme = 'auto',
     slideOptions: object = {},
-    swipeToClose: boolean = true
+    swipeToClose = true
   ) {
     const modal = await this.modalController.create({
       component: ViewerModalComponent,

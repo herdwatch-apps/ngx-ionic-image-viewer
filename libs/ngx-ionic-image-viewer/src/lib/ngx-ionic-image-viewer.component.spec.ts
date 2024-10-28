@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NgxIonicImageViewerComponent } from './ngx-ionic-image-viewer.component';
+import { IonicModule } from '@ionic/angular';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('NgxIonicImageViewerComponent', () => {
   let component: NgxIonicImageViewerComponent;
@@ -8,7 +10,11 @@ describe('NgxIonicImageViewerComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxIonicImageViewerComponent ]
+      declarations: [ NgxIonicImageViewerComponent ],
+      imports: [
+        IonicModule.forRoot(),
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

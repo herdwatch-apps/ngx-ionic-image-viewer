@@ -103,7 +103,7 @@ export class ViewerModalComponent implements OnInit {
   /**
    * @see http://www.javascriptkit.com/javatutors/touchevents3.shtml
    */
-  initSwipeToClose(isActive: boolean = true) {
+  initSwipeToClose(isActive = true) {
     if (!isActive) {
       return;
     }
@@ -111,10 +111,10 @@ export class ViewerModalComponent implements OnInit {
     const el = document.querySelector('ion-modal');
     el?.addEventListener('mousedown', (event) => this.swipeStart(event), true);
     el?.addEventListener('mousemove', (event) => this.swipeMove(event), true);
-    el?.addEventListener('mouseup', (event) => this.swipeEnd(event), true);
+    el?.addEventListener('mouseup', () => this.swipeEnd(), true);
     el?.addEventListener('touchstart', (event) => this.swipeStart(event), true);
     el?.addEventListener('touchmove', (event) => this.swipeMove(event), true);
-    el?.addEventListener('touchend', (event) => this.swipeEnd(event), true);
+    el?.addEventListener('touchend', () => this.swipeEnd(), true);
 
     this.modalController.getTop().then((modal) => {
       modal?.onWillDismiss().then(() => {
@@ -128,11 +128,12 @@ export class ViewerModalComponent implements OnInit {
     });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   swipeStart(event: any) {
     const {
       pageX,
       pageY
-    } = event.type === 'touchstart' && event.changedTouches ? event?.changedTouches[0] : event;
+    } = event.type === 'touchstart' && event?.changedTouches ? event.changedTouches[0] : event;
 
     this.swipeState = {
       ...this.swipeState,
@@ -145,11 +146,12 @@ export class ViewerModalComponent implements OnInit {
     };
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   swipeMove(event: any) {
     const {
       pageX,
       pageY
-    } = event.type === 'touchmove' && event.changedTouches ? event?.changedTouches[0] : event;
+    } = event.type === 'touchmove' && event?.changedTouches ? event.changedTouches[0] : event;
     // get horizontal dist traveled by finger while in contact with surface
     const distanceX = pageX - this.swipeState.startX;
     // get vertical dist traveled by finger while in contact with surface
@@ -179,12 +181,12 @@ export class ViewerModalComponent implements OnInit {
     }
   }
 
-  swipeEnd(event: any) {
+  swipeEnd() {
     if (this.swipeState.phase === 'none') {
       return;
     }
     const {allowedTime, direction, restraint, startTime, threshold, distanceX, distanceY} = this.swipeState;
-    let swipeType;
+    let swipeType: string;
 
     const elapsedTime = new Date().getTime() - startTime; // get time elapsed
     if (elapsedTime <= allowedTime) {

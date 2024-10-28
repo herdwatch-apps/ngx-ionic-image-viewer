@@ -35,14 +35,14 @@ export class NgxIonicImageViewerComponent implements OnInit {
 
   async viewImage(
     src: string | undefined,
-    srcFallback: string = '',
-    srcHighRes: string = '',
-    title: string = '',
-    titleSize: string = '',
-    text: string = '',
-    scheme: string = 'auto',
+    srcFallback = '',
+    srcHighRes = '',
+    title = '',
+    titleSize = '',
+    text = '',
+    scheme = 'auto',
     slideOptions: object = {},
-    swipeToClose: boolean = true
+    swipeToClose = true
   ) {
     const modal = await this.modalController.create({
       component: ViewerModalComponent,
@@ -67,5 +67,7 @@ export class NgxIonicImageViewerComponent implements OnInit {
     return await modal.present();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    /* do nothing */
+  }
 }

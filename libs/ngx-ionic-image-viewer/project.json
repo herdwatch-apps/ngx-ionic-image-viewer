@@ -21,12 +21,14 @@
       ]
     },
     "test": {
-      "executor": "@angular-devkit/build-angular:karma",
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/ngx-ionic-image-viewer"],
       "options": {
-        "main": "libs/ngx-ionic-image-viewer/src/test.ts",
-        "tsConfig": "libs/ngx-ionic-image-viewer/tsconfig.spec.json",
-        "karmaConfig": "libs/ngx-ionic-image-viewer/karma.conf.js"
+        "jestConfig": "libs/ngx-ionic-image-viewer/jest.config.ts"
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
     }
   }
 }
