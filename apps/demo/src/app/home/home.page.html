@@ -17,7 +17,7 @@
     <ion-text>
       <h2>Default</h2>
     </ion-text>
-    <ion-img-viewer [src]="imgUrl"></ion-img-viewer>
+    <ion-img-viewer data-cy="default" [src]="imgUrl"></ion-img-viewer>
     <br />
     <br />
     <!-- SCHEME -->
@@ -27,7 +27,7 @@
     <ion-text>
       <h3>Auto (default)</h3>
     </ion-text>
-    <ion-img-viewer title="Silhoutte (Scheme / Auto)" text="Photo by Mayur Gala on Unsplash" [src]="imgUrl" scheme="auto"></ion-img-viewer>
+    <ion-img-viewer data-cy="autoDefault" title="Silhoutte (Scheme / Auto)" text="Photo by Mayur Gala on Unsplash" [src]="imgUrl" scheme="auto"></ion-img-viewer>
     <br />
     <ion-list>
       <ion-item lines="full">
@@ -42,7 +42,7 @@
     <ion-text>
       <h3>Dark</h3>
     </ion-text>
-    <ion-img-viewer title="Silhoutte (Scheme / Dark)" text="Photo by Mayur Gala on Unsplash" [src]="imgUrl" scheme="dark"></ion-img-viewer>
+    <ion-img-viewer data-cy="dark" title="Silhoutte (Scheme / Dark)" text="Photo by Mayur Gala on Unsplash" [src]="imgUrl" scheme="dark"></ion-img-viewer>
     <br />
     <ion-text>
       <h3>Light</h3>
@@ -76,7 +76,7 @@
     <ion-text>
       <h3>ion-img</h3>
     </ion-text>
-    <ion-img ionImgViewer scheme="light" [src]="imgUrl" title="Directive ionImgViewer" text="Photo by Mayur Gala on Unsplash"></ion-img>
+    <ion-img data-cy="directive" ionImgViewer scheme="light" style="height: 100px" [src]="imgUrl" title="Directive ionImgViewer" text="Photo by Mayur Gala on Unsplash"></ion-img>
     <br />
     <br />
     <ion-text>
@@ -121,7 +121,7 @@
     <ion-text>
       <h3>ion-button</h3>
     </ion-text>
-    <ion-button (click)="openViewer()">Open Viewer</ion-button>
+    <ion-button data-cy="openViewer" (click)="openViewer()">Open Viewer</ion-button>
   </div>
   <br />
   <br />

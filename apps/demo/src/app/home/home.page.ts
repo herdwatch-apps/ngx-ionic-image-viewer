@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IonToggle, ModalController } from '@ionic/angular';
-import { ViewerModalComponent } from '@herdwatch/ngx-ionic-image-viewer';
+import { ModalController } from '@ionic/angular';
+import { ViewerModalComponent } from '../../../../../libs/ngx-ionic-image-viewer';
 
 @Component({
   selector: 'app-home',
@@ -31,6 +31,10 @@ export class HomePage implements OnInit {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       this.toggleTheme();
     }
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    console.log(window.__coverage__ ? Object.keys(window.__coverage__) : console.error('__coverage__ not found'));
+
   }
 
   toggleTheme() {

@@ -20,6 +20,7 @@ jobs:
       - run: npm run build
       - run: npm run lint
       - run: npm run test
+      - run: npm run e2e
       - run: npm publish --access public --tag ${{github.ref_name == 'master' && 'latest' || 'next' }}
         working-directory: dist/ngx-ionic-image-viewer
         env:

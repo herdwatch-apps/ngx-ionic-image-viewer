@@ -7,7 +7,6 @@ import {ModalController} from '@ionic/angular';
   styleUrls: ['./viewer-modal.component.scss'],
 })
 export class ViewerModalComponent implements OnInit {
-  // tslint:disable: no-inferrable-types
   @Input() alt?: string = '';
   @Input() scheme?: string = 'auto';
   @Input() slideOptions?: object = {};
@@ -18,7 +17,6 @@ export class ViewerModalComponent implements OnInit {
   @Input() text?: string = '';
   @Input() title?: string = '';
   @Input() titleSize?: string = '';
-  // tslint:enable: no-inferrable-types
 
   defaultSlideOptions = {
     zoom: {
@@ -186,7 +184,7 @@ export class ViewerModalComponent implements OnInit {
       return;
     }
     const {allowedTime, direction, restraint, startTime, threshold, distanceX, distanceY} = this.swipeState;
-    let swipeType: string;
+    let swipeType = null;
 
     const elapsedTime = new Date().getTime() - startTime; // get time elapsed
     if (elapsedTime <= allowedTime) {

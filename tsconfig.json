@@ -10,17 +10,20 @@
     "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2022",
+    "target": "es2022",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
     "paths": {
-      "@herdwatch/ngx-ionic-image-viewer": ["dist/ngx-ionic-image-viewer"],
-      "@herdwatch/ngx-ionic-image-viewer/*": ["dist/ngx-ionic-image-viewer/*"]
+      "@herdwatch/ngx-ionic-image-viewer": ["libs/ngx-ionic-image-viewer"],
+      "@herdwatch/ngx-ionic-image-viewer/*": ["libs/ngx-ionic-image-viewer/*"]
     },
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
   }
 }

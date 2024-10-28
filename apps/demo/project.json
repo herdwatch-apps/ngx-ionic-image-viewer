@@ -7,7 +7,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "ngx-build-plus:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/demo",
@@ -55,26 +55,50 @@
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
+        },
+        "coverage": {
+          "extraWebpackConfig": "./webpack.coverage.js",
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
         }
       },
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "ngx-build-plus:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "demo:build:production"
+          "buildTarget": "demo:build:production"
         },
         "development": {
-          "browserTarget": "demo:build:development"
+          "buildTarget": "demo:build:development"
         }
       },
       "defaultConfiguration": "development"
     },
-    "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+    "serve-coverage": {
+      "executor": "ngx-build-plus:dev-server",
       "options": {
-        "browserTarget": "demo:build"
+        "extraWebpackConfig": "./webpack.coverage.js",
+        "buildTarget": "demo:build:coverage",
+        "port": 3000
+      }
+    },
+    "serve-coverage-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "demo:build:coverage",
+        "port": 3000
+      }
+    },
+    "extract-i18n": {
+      "executor": "ngx-build-plus:extract-i18n",
+      "options": {
+        "buildTarget": "demo:build"
       }
     },
     "lint": {

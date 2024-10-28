@@ -1,5 +1,3 @@
-// tslint:disable-next-line
-
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ViewerModalComponent } from './viewer-modal/viewer-modal.component';
