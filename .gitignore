@@ -53,3 +53,5 @@ Thumbs.db
 .angular
 libs/ngx-ionic-image-viewer/node_modules
 .nx/
+/apps/demo-e2e/.nyc_output/
+/apps/demo-e2e/coverage/

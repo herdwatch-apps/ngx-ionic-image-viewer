@@ -6,22 +6,62 @@ on:
       - master
       - develop
 
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: actions/setup-node@v4
+#        with:
+#          node-version: 20
+#          registry-url: 'https://registry.npmjs.org'
+#          cache: 'npm'
+#      - run: npm ci
+#      - run: npm run build
+#      - run: npm run lint
+#      - run: npm run test
+#      - run: npm run e2e
+#      - run: npm publish --access public --tag ${{github.ref_name == 'master' && 'latest' || 'next' }}
+#        working-directory: dist/ngx-ionic-image-viewer
+#        env:
+#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
-  build:
+  cypress:
+    name: 'Cypress'
     runs-on: ubuntu-latest
+    container: cypress/browsers:node-20.17.0-chrome-129.0.6668.70-1-ff-130.0.1-edge-129.0.2792.52-1
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1,2]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          registry-url: 'https://registry.npmjs.org'
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run e2e
-      - run: npm publish --access public --tag ${{github.ref_name == 'master' && 'latest' || 'next' }}
-        working-directory: dist/ngx-ionic-image-viewer
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          fetch-depth: 0
+      - name: Run tests
+        run: |
+          npm ci
+          npm run e2e
+      - name: Copy nyc_output
+        if: success() || failure()
+        working-directory: apps/demo-e2e
+        run: |
+          pwd
+          ls -la .nyc_output
+          cp .nyc_output/out.json nyc_output-${{matrix.containers}}.json
+      - uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          if-no-files-found: ignore
+          name: nyc_output-${{ matrix.containers }}
+          retention-days: '1'
+          path: apps/demo-e2e/nyc_output-${{matrix.containers}}.json
+
+  qa:
+    name: QA
+    needs: [ cypress ]
+    if: success() || failure()
+    secrets: inherit
+    uses: ./.github/workflows/_qa.yml
+

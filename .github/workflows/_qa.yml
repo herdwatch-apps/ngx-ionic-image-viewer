@@ -1,0 +1,44 @@
+on:
+  workflow_call:
+    inputs:
+      continue_on_error:
+        type: boolean
+
+jobs:
+  qa:
+    continue-on-error: ${{ inputs.continue_on_error || true }}
+    name: QA
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      - name: Install npm dependencies
+        shell: bash
+        run: |
+          npm ci --cache .npm --prefer-offline
+      - name: Download nyc_output_parts
+        uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+          pattern: nyc_output-*
+          path: nyc_output_parts
+      - name: Check artifacts
+        run: |
+          ls -la nyc_output_parts
+      - name: Generate coverage report
+        if: ${{ hashFiles('nyc_output_parts/nyc_output-1.json') != '' }}
+        run: |
+          npx nyc merge nyc_output_parts/ apps/demo-e2e/.nyc_output/out.json
+          cd apps/demo-e2e
+          ls -la
+          npx nyc report --nycrc-path $PWD/nyc.config.js
+          ls -la coverage
+      - name: Report NYC coverage
+        uses: sidx1024/report-nyc-coverage-github-action@v1.2.7
+        with:
+          coverage_file: "apps/demo-e2e/coverage/coverage-summary.json"
