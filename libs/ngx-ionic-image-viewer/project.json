@@ -8,7 +8,7 @@
     "build": {
       "executor": "@angular-devkit/build-angular:ng-packagr",
       "options": {
-        "tsConfig": "libs/ngx-ionic-image-viewer/tsconfig.lib.json",
+        "tsConfig": "libs/ngx-ionic-image-viewer/tsconfig.json",
         "project": "libs/ngx-ionic-image-viewer/ng-package.json"
       },
       "configurations": {

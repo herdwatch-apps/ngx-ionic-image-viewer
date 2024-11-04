@@ -1,6 +1,6 @@
 {
   "name": "@herdwatch/ngx-ionic-image-viewer",
-  "version": "2.1.9-dev.0",
+  "version": "2.1.9-dev.1",
   "description": "The angular workspace to develop the ngx-ionic-image-viewer component",
   "keywords": [
     "ionic",
