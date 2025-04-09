@@ -1,5 +1,5 @@
 import { ElementRef, Renderer2 } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
 import { NgxIonicImageViewerDirective } from './ngx-ionic-image-viewer.directive';
 
 describe('NgxIonicImageViewerDirective', () => {

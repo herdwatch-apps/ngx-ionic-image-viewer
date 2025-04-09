@@ -1,13 +1,48 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { ViewerModalComponent } from '../../../../../libs/ngx-ionic-image-viewer';
+import {
+  ModalController,
+  IonContent,
+  IonText,
+  IonList,
+  IonItem,
+  IonIcon,
+  IonLabel,
+  IonToggle,
+  IonImg,
+  IonAvatar, IonThumbnail, IonItemDivider, IonButton, IonToolbar, IonTitle, IonHeader
+} from '@ionic/angular/standalone';
+import { ViewerModalComponent, NgxIonicImageViewerComponent, NgxIonicImageViewerDirective } from '@herdwatch/ngx-ionic-image-viewer';
+import { addIcons } from 'ionicons';
+import { moon } from 'ionicons/icons';
+
+declare var window: any;
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
+  imports: [
+    IonContent,
+    IonText,
+    NgxIonicImageViewerComponent,
+    IonList,
+    IonItem,
+    IonIcon,
+    IonLabel,
+    IonToggle,
+    IonImg,
+    NgxIonicImageViewerDirective,
+    IonAvatar,
+    IonThumbnail,
+    IonItemDivider,
+    IonButton,
+    IonToolbar,
+    IonTitle,
+    IonHeader,
+  ],
+  standalone: true,
 })
-export class HomePage implements OnInit {
+export default class HomePage implements OnInit {
   prefersDark = false;
 
   imgUrl = `https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?&q=80`;
@@ -25,16 +60,19 @@ export class HomePage implements OnInit {
     author: 'Rachel Davis',
   };
 
-  constructor(public modalController: ModalController) {}
+  constructor(public modalController: ModalController) {
+    addIcons({ moon });
+  }
 
   ngOnInit() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       this.toggleTheme();
     }
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    console.log(window.__coverage__ ? Object.keys(window.__coverage__) : console.error('__coverage__ not found'));
-
+    // console.log(
+    //   window.__coverage__
+    //     ? Object.keys(window.__coverage__)
+    //     : console.error('__coverage__ not found'),
+    // );
   }
 
   toggleTheme() {

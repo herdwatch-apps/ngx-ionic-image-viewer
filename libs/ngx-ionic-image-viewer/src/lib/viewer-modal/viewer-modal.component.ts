@@ -1,10 +1,27 @@
-import {Component, OnInit, Input, ViewChild, ElementRef} from '@angular/core';
-import {ModalController} from '@ionic/angular';
-
+import { Component, OnInit, Input, ViewChild, ElementRef, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ModalController } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonButton, IonButtons, IonIcon, IonTitle, IonContent, IonFooter, IonText } from '@ionic/angular/standalone';
+import { NgClass } from '@angular/common';
+import { addIcons } from 'ionicons';
+import { close } from 'ionicons/icons';
 @Component({
   selector: 'ion-viewer-modal',
   templateUrl: './viewer-modal.component.html',
   styleUrls: ['./viewer-modal.component.scss'],
+  standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonButton,
+    NgClass,
+    IonButtons,
+    IonIcon,
+    IonTitle,
+    IonContent,
+    IonFooter,
+    IonText,
+  ],
 })
 export class ViewerModalComponent implements OnInit {
   @Input() alt?: string = '';
@@ -42,16 +59,16 @@ export class ViewerModalComponent implements OnInit {
     startTime: 0,
   };
 
-
   @ViewChild('swiper') swiperRef: ElementRef | undefined;
 
   // @ViewChild('sliderRef', { static: true }) slides!: IonSlides;
 
   constructor(private modalController: ModalController) {
+    addIcons({close})
   }
 
   async ngOnInit() {
-    this.options = {...this.defaultSlideOptions, ...this.slideOptions};
+    this.options = { ...this.defaultSlideOptions, ...this.slideOptions };
     this.src = this.srcHighRes || this.src;
     this.setStyle();
     this.setScheme(this.scheme);
@@ -128,10 +145,10 @@ export class ViewerModalComponent implements OnInit {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   swipeStart(event: any) {
-    const {
-      pageX,
-      pageY
-    } = event.type === 'touchstart' && event?.changedTouches ? event.changedTouches[0] : event;
+    const { pageX, pageY } =
+      event.type === 'touchstart' && event?.changedTouches
+        ? event.changedTouches[0]
+        : event;
 
     this.swipeState = {
       ...this.swipeState,
@@ -146,10 +163,10 @@ export class ViewerModalComponent implements OnInit {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   swipeMove(event: any) {
-    const {
-      pageX,
-      pageY
-    } = event.type === 'touchmove' && event?.changedTouches ? event.changedTouches[0] : event;
+    const { pageX, pageY } =
+      event.type === 'touchmove' && event?.changedTouches
+        ? event.changedTouches[0]
+        : event;
     // get horizontal dist traveled by finger while in contact with surface
     const distanceX = pageX - this.swipeState.startX;
     // get vertical dist traveled by finger while in contact with surface
@@ -183,16 +200,30 @@ export class ViewerModalComponent implements OnInit {
     if (this.swipeState.phase === 'none') {
       return;
     }
-    const {allowedTime, direction, restraint, startTime, threshold, distanceX, distanceY} = this.swipeState;
+    const {
+      allowedTime,
+      direction,
+      restraint,
+      startTime,
+      threshold,
+      distanceX,
+      distanceY,
+    } = this.swipeState;
     let swipeType = null;
 
     const elapsedTime = new Date().getTime() - startTime; // get time elapsed
     if (elapsedTime <= allowedTime) {
       // first condition for a swipe met
-      if (Math.abs(distanceX) >= threshold && Math.abs(distanceY) <= restraint) {
+      if (
+        Math.abs(distanceX) >= threshold &&
+        Math.abs(distanceY) <= restraint
+      ) {
         // 2nd condition for horizontal swipe met
         swipeType = direction; // set swipeType to either "left" or "right"
-      } else if (Math.abs(distanceY) >= threshold && Math.abs(distanceX) <= restraint) {
+      } else if (
+        Math.abs(distanceY) >= threshold &&
+        Math.abs(distanceX) <= restraint
+      ) {
         // 2nd condition for vertical swipe met
         swipeType = direction; // set swipeType to either "top" or "down"
       }

@@ -1,9 +1,10 @@
 import { Directive, ElementRef, HostListener, Input, Renderer2, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
 import { ViewerModalComponent } from './viewer-modal/viewer-modal.component';
 
 @Directive({
-  selector: '[ionImgViewer]'
+  selector: '[ionImgViewer]',
+  standalone: true,
 })
 export class NgxIonicImageViewerDirective implements OnInit {
   constructor(private el: ElementRef, private renderer: Renderer2, public modalController: ModalController) { }

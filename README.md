@@ -118,7 +118,7 @@ Import `ViewerModalComponent` from `@herdwatch/ngx-ionic-image-viewer` and add i
 Use `cssClass: ['ion-img-viewer', 'my-custom-ion-img-viewer']`in case you want to add more css classes.
 
 ```js
-import {ModalController} from '@ionic/angular';
+import {ModalController} from '@ionic/angular/standalone';
 import {ViewerModalComponent} from '@herdwatch/ngx-ionic-image-viewer';
 
 export class HomePage {

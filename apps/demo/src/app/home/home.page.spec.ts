@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { provideIonicAngular } from '@ionic/angular/standalone';
+import { provideEnvironmentNgxIonicImageViewer } from '@herdwatch/ngx-ionic-image-viewer';
 
-import { HomePage } from './home.page';
-import { NgxIonicImageViewerModule } from '@herdwatch/ngx-ionic-image-viewer';
+import HomePage from './home.page';
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -10,8 +10,7 @@ describe('HomePage', () => {
 
   beforeEach((() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePage ],
-      imports: [IonicModule.forRoot(), NgxIonicImageViewerModule]
+      providers: [provideIonicAngular(), provideEnvironmentNgxIonicImageViewer()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);

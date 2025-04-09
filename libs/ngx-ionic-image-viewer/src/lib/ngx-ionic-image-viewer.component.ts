@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
 import { ViewerModalComponent } from './viewer-modal/viewer-modal.component';
 import { register } from 'swiper/element/bundle';
 
@@ -14,7 +14,8 @@ register();
       }
     `
   ],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
+  standalone: true,
 })
 export class NgxIonicImageViewerComponent implements OnInit {
   @Input() alt?: string;

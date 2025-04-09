@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ViewerModalComponent } from './viewer-modal.component';
-import { IonicModule } from '@ionic/angular';
+import { provideIonicAngular } from '@ionic/angular/standalone';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ViewerModalComponent', () => {
@@ -10,10 +10,7 @@ describe('ViewerModalComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewerModalComponent ],
-      imports: [
-        IonicModule.forRoot(),
-      ],
+      providers: [provideIonicAngular()],
       schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
