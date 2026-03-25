@@ -1,6 +1,6 @@
 {
   "name": "@herdwatch/ngx-ionic-image-viewer",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "The angular workspace to develop the ngx-ionic-image-viewer component",
   "keywords": [
     "ionic",
@@ -42,7 +42,7 @@
     "url": "https://github.com/herdwatch-apps/ngx-ionic-image-viewer.git"
   },
   "peerDependencies": {
-    "@angular/core": "^18.0.0 || ^19.0.0 || ^20.0.0",
+    "@angular/core": ">=18.0.0 <22.0.0",
     "@ionic/angular": ">=8.0.0",
     "rxjs": "^7.8.0"
   },
