@@ -2,6 +2,17 @@
 
 # ngx-ionic-image-viewer <!-- omit in toc -->
 
+## Why this fork exists
+
+Forked from [upstream](https://github.com/SimonGolms/ngx-ionic-image-viewer) because upstream announced in January 2022 that the package was unmaintained (the author expected Ionic 6 to break its Slider.js dependency) and explicitly invited users to fork it; upstream never released past `v0.7.5`.
+
+Published as [`@herdwatch/ngx-ionic-image-viewer`](https://www.npmjs.com/package/@herdwatch/ngx-ionic-image-viewer).
+
+Changes from upstream (diffed against upstream's `v0.7.5` tag, which is also upstream's current `master` HEAD — upstream has no tag anywhere near our pinned `2.2.2`, so this is the closest available approximation):
+- Replaced the deprecated `ion-slide`/Slider.js-based viewer with a swiperjs implementation, migrated the project to an Nx monorepo, and converted the component/directive to standalone Angular APIs (`@ionic/angular/standalone`).
+- Continuously updated to support each Angular major release since (15, 18, 20, 21) plus e2e tests and dependency upgrades, keeping the library compatible with ngx-app's own Angular upgrades — none of this exists upstream, which last supported Angular ~8/Ionic 4.
+- Republished under the `@herdwatch/ngx-ionic-image-viewer` npm scope.
+
 > An Ionic Angular module to view & zoom on images and photos works with swiperjs, so it works with Ionic7.
 
 ## Demo <!-- omit in toc -->
