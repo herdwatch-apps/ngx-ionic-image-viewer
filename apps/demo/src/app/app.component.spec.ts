@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter } from "@angular/router";
 import { MockInstance, MockBuilder } from 'ng-mocks';
 import { BrowserModule } from '@angular/platform-browser';
-import { Platform } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@awesome-cordova-plugins/splash-screen/ngx';
 import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 import { AppComponent } from './app.component';

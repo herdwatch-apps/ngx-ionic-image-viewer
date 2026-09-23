@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { provideIonicAngular } from '@ionic/angular/standalone';
+import { provideIonicAngular } from '@ionic/angular';
 
 import { NgxIonicImageViewerComponent } from './ngx-ionic-image-viewer.component';
 import { provideNgxIonicImageViewer } from './ngx-ionic-image-viewer.providers';

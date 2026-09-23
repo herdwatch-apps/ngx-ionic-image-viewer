@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ModalController } from '@ionic/angular/standalone';
-import { IonHeader, IonToolbar, IonButton, IonButtons, IonIcon, IonTitle, IonContent, IonFooter, IonText } from '@ionic/angular/standalone';
+import { ModalController } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonButton, IonButtons, IonIcon, IonTitle, IonContent, IonFooter, IonText } from '@ionic/angular';
 import { NgClass } from '@angular/common';
 import { addIcons } from 'ionicons';
 import { close } from 'ionicons/icons';

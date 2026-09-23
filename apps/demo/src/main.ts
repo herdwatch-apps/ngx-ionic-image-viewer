@@ -4,7 +4,7 @@ import { provideRouter } from '@angular/router';
 
 import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
-import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular/standalone';
+import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular';
 import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 import { SplashScreen } from '@awesome-cordova-plugins/splash-screen/ngx';
 import { RouteReuseStrategy } from '@angular/router';

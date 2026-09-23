@@ -9,7 +9,7 @@ Forked from [upstream](https://github.com/SimonGolms/ngx-ionic-image-viewer) bec
 Published as [`@herdwatch/ngx-ionic-image-viewer`](https://www.npmjs.com/package/@herdwatch/ngx-ionic-image-viewer).
 
 Changes from upstream (diffed against upstream's `v0.7.5` tag, which is also upstream's current `master` HEAD — upstream has no tag anywhere near our pinned `2.2.2`, so this is the closest available approximation):
-- Replaced the deprecated `ion-slide`/Slider.js-based viewer with a swiperjs implementation, migrated the project to an Nx monorepo, and converted the component/directive to standalone Angular APIs (`@ionic/angular/standalone`).
+- Replaced the deprecated `ion-slide`/Slider.js-based viewer with a swiperjs implementation, migrated the project to an Nx monorepo, and converted the component/directive to standalone Angular APIs (`@ionic/angular`).
 - Continuously updated to support each Angular major release since (15, 18, 20, 21) plus e2e tests and dependency upgrades, keeping the library compatible with ngx-app's own Angular upgrades — none of this exists upstream, which last supported Angular ~8/Ionic 4.
 - Republished under the `@herdwatch/ngx-ionic-image-viewer` npm scope.
 
@@ -129,7 +129,7 @@ Import `ViewerModalComponent` from `@herdwatch/ngx-ionic-image-viewer` and add i
 Use `cssClass: ['ion-img-viewer', 'my-custom-ion-img-viewer']`in case you want to add more css classes.
 
 ```js
-import {ModalController} from '@ionic/angular/standalone';
+import {ModalController} from '@ionic/angular';
 import {ViewerModalComponent} from '@herdwatch/ngx-ionic-image-viewer';
 
 export class HomePage {

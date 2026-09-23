@@ -4,7 +4,15 @@
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
     "target": "es2016",
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    // See libs/ngx-ionic-image-viewer/tsconfig.spec.json for why these are here.
+    "paths": {
+      "@herdwatch/ngx-ionic-image-viewer": ["libs/ngx-ionic-image-viewer"],
+      "@herdwatch/ngx-ionic-image-viewer/*": ["libs/ngx-ionic-image-viewer/*"],
+      "@ionic/angular": ["node_modules/@ionic/angular/dist/standalone"],
+      "@ionic/angular/common": ["node_modules/@ionic/angular/dist/common"],
+      "@ionic/angular/lazy": ["node_modules/@ionic/angular/dist/lazy"]
+    }
   },
   "files": ["src/setup-jest.ts"],
   "include": [

@@ -10,7 +10,7 @@ import {
   IonToggle,
   IonImg,
   IonAvatar, IonThumbnail, IonItemDivider, IonButton, IonToolbar, IonTitle, IonHeader
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 import { ViewerModalComponent, NgxIonicImageViewerComponent, NgxIonicImageViewerDirective } from '@herdwatch/ngx-ionic-image-viewer';
 import { addIcons } from 'ionicons';
 import { moon } from 'ionicons/icons';

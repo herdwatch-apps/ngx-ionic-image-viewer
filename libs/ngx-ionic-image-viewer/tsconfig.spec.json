@@ -6,11 +6,21 @@
       "jasmine",
       "node"
     ],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    // ts-jest forces `module: commonjs`, which makes the root's `moduleResolution: bundler`
+    // invalid (TS5095) and drops TypeScript back to classic node resolution. That resolution
+    // cannot read a package's `exports` map, and from Ionic 9 every entry point lives only
+    // there - `@ionic/angular/common` has no directory of its own any more. Without these
+    // mappings the specs fail to compile with TS2307 plus a degraded `ModalController`.
+    // Remove them once this project's Jest runs in ESM mode.
+    "paths": {
+      "@herdwatch/ngx-ionic-image-viewer": ["libs/ngx-ionic-image-viewer"],
+      "@herdwatch/ngx-ionic-image-viewer/*": ["libs/ngx-ionic-image-viewer/*"],
+      "@ionic/angular": ["node_modules/@ionic/angular/dist/standalone"],
+      "@ionic/angular/common": ["node_modules/@ionic/angular/dist/common"],
+      "@ionic/angular/lazy": ["node_modules/@ionic/angular/dist/lazy"]
+    }
   },
-  "files": [
-    "src/test.ts"
-  ],
   "include": [
     "**/*.spec.ts",
     "**/*.d.ts"

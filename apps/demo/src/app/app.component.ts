@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform, IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { Platform, IonApp, IonRouterOutlet } from '@ionic/angular';
 import { SplashScreen } from '@awesome-cordova-plugins/splash-screen/ngx';
 import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 
