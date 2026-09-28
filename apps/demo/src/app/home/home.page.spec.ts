@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideIonicAngular } from '@ionic/angular/standalone';
+import { provideIonicAngular } from '@ionic/angular';
 import { provideEnvironmentNgxIonicImageViewer } from '@herdwatch/ngx-ionic-image-viewer';
 
 import HomePage from './home.page';

@@ -1,5 +1,5 @@
 import { Directive, ElementRef, HostListener, Input, Renderer2, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular/standalone';
+import { ModalController } from '@ionic/angular';
 import { ViewerModalComponent } from './viewer-modal/viewer-modal.component';
 
 @Directive({

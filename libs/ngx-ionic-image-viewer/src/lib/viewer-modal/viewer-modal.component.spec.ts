@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ViewerModalComponent } from './viewer-modal.component';
-import { provideIonicAngular } from '@ionic/angular/standalone';
+import { provideIonicAngular } from '@ionic/angular';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ViewerModalComponent', () => {
